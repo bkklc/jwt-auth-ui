@@ -10,15 +10,18 @@ function Login() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setError(null);
-    try {
-      await login(email, password);
-      navigate("/dashboard");
-    } catch (err) {
-      setError("! HATALI GİRİŞ ");
-    }
-  };
+  e.preventDefault();
+  setError(null);
+  try {
+    const { user } = await login(email, password);
+    
+    
+    navigate("/dashboard");
+  } catch (err) {
+    
+    setError(err.message || "! HATALI GİRİŞ");
+  }
+};
 
    const goToRegister = () => {
     navigate("/register");

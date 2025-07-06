@@ -35,7 +35,7 @@ function Register() {
 
       navigate("/login");    
     } catch (err) {
-      setError(err.response?.data?.message || "Kayıt sırasında hata oluştu.");
+      setError(err.response?.data?.message || "Bu mail adresi zaten kayıtlı.");
     }
   };
 
