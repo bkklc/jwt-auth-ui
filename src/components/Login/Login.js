@@ -19,7 +19,7 @@ function Login() {
     navigate("/dashboard");
   } catch (err) {
     
-    setError(err.message || "! HATALI GİRİŞ");
+    setError("! HATALI GİRİŞ");
   }
 };
 
