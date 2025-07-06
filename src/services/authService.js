@@ -1,7 +1,7 @@
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
-const API_URL = "https://localhost:7130/api";
+const API_URL = "https://localhost:7130/api/auth";
 
 const instance = axios.create({
   baseURL: API_URL,
@@ -16,7 +16,7 @@ instance.interceptors.request.use((config) => {
 });
 
 export const login = async (email, password) => {
-  const response = await instance.post("/auth/login", { email, password });
+  const response = await instance.post("/login", { email, password });
  
 
   const token = response.data.token || response.data;  
@@ -30,7 +30,7 @@ export const login = async (email, password) => {
 
 
 export const register = async (userData) => {
-  const response = await axios.post(`${API_URL}/user/register`, userData);
+  const response = await instance.post("/register", userData);
   return response.data;
 };
 
