@@ -24,7 +24,7 @@ function Dashboard() {
     >
       <h1> Giriş Başarılı! </h1>
 
-      <h1> Hoş geldiniz {user?.firstName} {user?.lastName}! </h1>
+      <h1> Hoş geldiniz, {user?.firstName} {user?.lastName} </h1>
       <button
         onClick={handleLogout}
         style={{
